@@ -15,8 +15,6 @@ class GenRL1:
         return self.len
 
     def __makeData__(self, iterMax):
-
-
         dCnt = 0
         d = 20 + int(70*np.random.rand())
 
@@ -63,3 +61,7 @@ class GenRL1:
             return state.reshape((4, self.windowSize, -1)), self.terminate
         else:
             return None, self.terminate
+
+    def reset(self):
+        self.idx = self.windowSize
+        self.terminate = False
